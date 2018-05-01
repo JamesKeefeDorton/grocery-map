@@ -1,8 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import "bootstrap/dist/css/bootstrap.min.css";
+//import "./index.css";
+import fontawesome from "@fortawesome/fontawesome";
+import freeSolidIcons from "@fortawesome/fontawesome-free-solid";
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+fontawesome.library.add(freeSolidIcons);
+
+ReactDOM.render(<App />, document.getElementById("root"));
