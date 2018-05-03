@@ -10,7 +10,10 @@
     "build": "node scripts/build.js",
     "seed": "node scripts/seedDB.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "installDeps": "npm install && cd client && npm install"
+    "installDeps": "npm install && cd client && npm install",
+    "xstart": "concurrently --kill-others-on-fail \"yarn xserver\" \"yarn xclient\"",
+    "xserver": "nodemon server.js",
+    "xclient": "cd client && yarn start"
   },
   "author": "",
   "license": "ISC",
