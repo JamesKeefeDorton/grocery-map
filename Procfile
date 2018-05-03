@@ -1,1 +1,1 @@
-web: yarn xstart
+web: node server
