@@ -10,7 +10,7 @@
     "build": "node scripts/build.js",
     "seed": "node scripts/seedDB.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "installDeps": "yarn && cd client && yarn",
+    "installDeps": "npm install && cd client && npm install",
     "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   "author": "",
@@ -20,6 +20,8 @@
     "nodemon": "^1.11.0"
   },
   "dependencies": {
+    "concurrently": "^3.5.0",
+    "nodemon": "^1.11.0",
     "axios": "^0.16.2",
     "body-parser": "^1.18.2",
     "express": "^4.15.4",
