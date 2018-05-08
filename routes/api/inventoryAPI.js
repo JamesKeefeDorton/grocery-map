@@ -1,7 +1,7 @@
 const router = require("express").Router();
-const inventoryController = require("../controllers/inventoryController")
+const inventoryController = require("../../controllers/inventoryController")
 
 router.route("/")
-    .get(itemsController.findAll)
+    .get(inventoryController.findAll)
 
 module.exports = router;
