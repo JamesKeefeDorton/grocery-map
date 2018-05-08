@@ -7,15 +7,27 @@ class Register extends Component {
 
   state = {
     username: "",
-    password: "",
-    isValid: true
+    password: ""
   };
 
   onClick = (e) => {
     e.preventDefault();
-    axios.post("/api/user", this.state)
-      .then(res => this.props.history.push("/"))
-      .catch(err => console.log(err));
+    if (this.state.username != "" && this.state.password != "") {
+      const u = this.state.username;
+      const p = this.state.password;
+      axios.get("/api/user", {
+        params: {
+          username: u,
+          password: p
+        }
+      })
+        .then(res => {
+          console.log(res)
+        })
+      {/*axios.post("/api/user", this.state)
+        .then(res => this.props.history.push("/"))
+        .catch(err => console.log(err));*/}
+    }
   }
 
   onChange = (e) => {
