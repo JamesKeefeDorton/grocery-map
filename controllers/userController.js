@@ -8,10 +8,9 @@ module.exports = {
             .catch(err => res.status(422).json(err))
     },
     findUser: function (req, res) {
-    	console.log(req);
-        /*db.User
-            .find({username: req.query.username, password: req.query.password})
+        db.User
+            .find({username: req.params.username})
             .then(dbModel => res.json(dbModel))
-            .catch(err => res.status(422).json(err))*/
+            .catch(err => res.status(422).json(err))
     },
 }

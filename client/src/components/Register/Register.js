@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import axios from "axios";
 //import {} from 'reactstrap';
 
@@ -13,20 +13,9 @@ class Register extends Component {
   onClick = (e) => {
     e.preventDefault();
     if (this.state.username != "" && this.state.password != "") {
-      const u = this.state.username;
-      const p = this.state.password;
-      axios.get("/api/user", {
-        params: {
-          username: u,
-          password: p
-        }
-      })
-        .then(res => {
-          console.log(res)
-        })
-      {/*axios.post("/api/user", this.state)
+      axios.post("/api/user/register", this.state)
         .then(res => this.props.history.push("/"))
-        .catch(err => console.log(err));*/}
+        .catch(err => console.log(err));
     }
   }
 
