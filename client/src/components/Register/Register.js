@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import axios from "axios";
 //import {} from 'reactstrap';
 
@@ -7,15 +7,16 @@ class Register extends Component {
 
   state = {
     username: "",
-    password: "",
-    isValid: true
+    password: ""
   };
 
   onClick = (e) => {
     e.preventDefault();
-    axios.post("/api/user", this.state)
-      .then(res => this.props.history.push("/"))
-      .catch(err => console.log(err));
+    if (this.state.username != "" && this.state.password != "") {
+      axios.post("/api/user/register", this.state)
+        .then(res => this.props.history.push("/"))
+        .catch(err => console.log(err));
+    }
   }
 
   onChange = (e) => {
