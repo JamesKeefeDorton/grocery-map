@@ -7,19 +7,19 @@ import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 
-class Inventory extends Component {
+class ListItems extends Component {
     state = {
-        inventory: []
+        listItems: []
     };
     componentDidMount() {
-        this.loadInventory();
+        this.loadListItems();
     }
-    loadInventory = () => {
-        API.getInventory()
+    loadListItems = () => {
+        API.getListItems()
             .then(res =>
                 {
                     console.log('heres the response ', res)
-                    this.setState({ inventory: res.data })
+                    this.setState({ listItems: res.data })
                     console.log(res.data);
                 }
             )
@@ -28,8 +28,8 @@ class Inventory extends Component {
 
     generateListItems = () =>
     {  
-        if (this.state.inventory.length > 0) {
-          const mapped = this.state.inventory.map(item => (
+        if (this.state.listItems.length > 0) {
+          const mapped = this.state.listItems.map(item => (
                 <tr>
                     <td>
                         {item.name}
@@ -76,4 +76,4 @@ class Inventory extends Component {
     }
 }
 
-export default Inventory;
+export default ListItems;

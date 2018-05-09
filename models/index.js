@@ -1,4 +1,4 @@
 module.exports = {
-    Inventory: require("./inventory"),
+    ListItems: require("./listitems"),
     User: require("./User")
 };

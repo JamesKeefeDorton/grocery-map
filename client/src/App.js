@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Inventory from "./pages/Inventory";
+import ListItems from "./pages/ListItems";
 import Nav from "./components/Nav";
 
 const App = () => (
@@ -8,7 +8,7 @@ const App = () => (
     <div>
       <Nav />
       <Switch>
-        <Route exact path="/" component={Inventory} />
+        <Route exact path="/" component={ListItems} />
       </Switch>
     </div>
   </Router>

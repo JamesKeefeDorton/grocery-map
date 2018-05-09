@@ -44,9 +44,9 @@ const inventorySeed = [
     }
 ];
 
-db.Inventory
+db.ListItems
     .remove({})
-    .then(() => db.Inventory.collection.insertMany(inventorySeed))
+    .then(() => db.ListItems.collection.insertMany(inventorySeed))
     .then(data => {
         console.log(data.insertedIds.length + " records inserted!");
         process.exit(0);

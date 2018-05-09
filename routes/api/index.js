@@ -1,9 +1,9 @@
 const router = require("express").Router();
-const inventoryRoutes = require("./inventoryAPI");
+const listitemsRoutes = require("./listitemsAPI");
 const userRoutes = require("./userAPI");
 
 // Book routes
-router.use("/inventory", inventoryRoutes);
+router.use("/listitems", listitemsRoutes);
 router.use("/user", userRoutes);
 
 module.exports = router;
