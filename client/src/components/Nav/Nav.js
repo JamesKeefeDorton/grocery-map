@@ -1,11 +1,8 @@
 import React from "react";
+import {Navbar} from "reactstrap";
 
 const Nav = () => (
-  <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a className="navbar-brand" href="/">
-      React Reading List
-    </a>
-  </nav>
+  <Navbar>
 );
 
 export default Nav;
