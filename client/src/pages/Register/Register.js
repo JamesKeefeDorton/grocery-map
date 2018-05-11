@@ -12,7 +12,7 @@ class Register extends Component {
 
   onClick = (e) => {
     e.preventDefault();
-    if (this.state.username != "" && this.state.password != "") {
+    if (this.state.username !== "" && this.state.password !== "") {
       axios.post("/api/user/register", this.state)
         .then(res => this.props.history.push("/"))
         .catch(err => console.log(err));

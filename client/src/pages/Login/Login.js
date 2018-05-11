@@ -14,7 +14,7 @@ class Login extends Component {
 
   onClick = (e) => {
     e.preventDefault();
-    if (this.state.username != "" && this.state.password != "") {
+    if (this.state.username !== "" && this.state.password !== "") {
       axios.get("/api/user/login/" + this.state.username)
         .then(res => {
           if (res.data[0].password === this.state.password) {
@@ -34,7 +34,7 @@ class Login extends Component {
   }
 
   render() {
-    {if (this.state.loggedIn) {
+    if (this.state.loggedIn) {
       return(<ListItems/>);
     } else {
   		return (
@@ -50,7 +50,7 @@ class Login extends Component {
           <button type="submit" className="btn" onClick={this.onClick}>Login</button>
         </form>
   		);
-    }}
+    }
   }
 }
 
