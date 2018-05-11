@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 //import { Link } from "react-router-dom";
 import axios from "axios";
 //import {} from 'reactstrap';
-import Inventory from "../../pages/Inventory";
+import ListItems from "../../pages/ListItems";
 
 class Login extends Component {
 
@@ -35,7 +35,7 @@ class Login extends Component {
 
   render() {
     {if (this.state.loggedIn) {
-      return(<Inventory/>);
+      return(<ListItems/>);
     } else {
   		return (
   			<form>

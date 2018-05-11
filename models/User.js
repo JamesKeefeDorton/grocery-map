@@ -8,6 +8,9 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         require: true
+    },
+    lists: {
+    	type: Array
     }
 });
 

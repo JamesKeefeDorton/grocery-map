@@ -1,9 +1,10 @@
 const router = require("express").Router();
-const listitemsRoutes = require("./listitemsAPI");
+const itemRoutes = require("./itemAPI");
+const listRoutes = require("./listAPI");
 const userRoutes = require("./userAPI");
 
-// Book routes
-router.use("/listitems", listitemsRoutes);
+router.use("/item", itemRoutes);
+router.use("/list", listRoutes);
 router.use("/user", userRoutes);
 
 module.exports = router;
