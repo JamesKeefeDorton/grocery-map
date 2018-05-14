@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-//import { Link } from "react-router-dom";
 import axios from "axios";
-//import {} from 'reactstrap';
+import { Container } from "reactstrap";
 
 class Register extends Component {
 
@@ -27,17 +26,19 @@ class Register extends Component {
 
   render() {
 		return (
-			<form>
-        <div>
-          <label for="usernameInput">Username</label>
-          <input type="text" name="username" onChange={this.onChange} />
-        </div>
-        <div>
-          <label for="passwordInput">Password</label>
-          <input type="password" name="password" onChange={this.onChange} />
-        </div>
-        <button type="submit" className="btn" onClick={this.onClick}>Register</button>
-      </form>
+      <Container>
+  			<form>
+          <div>
+            <label for="usernameInput">Username</label>
+            <input type="text" name="username" onChange={this.onChange} />
+          </div>
+          <div>
+            <label for="passwordInput">Password</label>
+            <input type="password" name="password" onChange={this.onChange} />
+          </div>
+          <button type="submit" className="btn" onClick={this.onClick}>Sign Up</button>
+        </form>
+        </Container>
 		);
   }
 }

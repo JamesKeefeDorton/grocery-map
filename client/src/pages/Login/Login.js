@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-//import { Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import axios from "axios";
-//import {} from 'reactstrap';
-import ListItems from "../../pages/ListItems";
+import { Container } from "reactstrap";
 
 class Login extends Component {
 
@@ -18,9 +17,10 @@ class Login extends Component {
       axios.get("/api/user/login/" + this.state.username)
         .then(res => {
           if (res.data[0].password === this.state.password) {
-            this.setState({
-              loggedIn: true
-            });
+            //this.setState({
+            //  loggedIn: true
+            //});
+            this.props.callback();
           }
         })
         .catch(err => console.log(err));
@@ -35,20 +35,24 @@ class Login extends Component {
 
   render() {
     if (this.state.loggedIn) {
-      return(<ListItems/>);
+      return(
+          <Redirect to="/item" />
+      );
     } else {
   		return (
-  			<form>
-          <div>
-            <label for="usernameInput">Username</label>
-            <input type="text" name="username" onChange={this.onChange} />
-          </div>
-          <div>
-            <label for="passwordInput">Password</label>
-            <input type="password" name="password" onChange={this.onChange} />
-          </div>
-          <button type="submit" className="btn" onClick={this.onClick}>Login</button>
-        </form>
+        <Container>
+    			<form>
+            <div>
+              <label htmlFor="usernameInput">Username</label>
+              <input type="text" name="username" autocomplete="username" onChange={this.onChange} />
+            </div>
+            <div>
+              <label htmlFor="passwordInput">Password</label>
+              <input type="password" name="password" autocomplete="current-password" onChange={this.onChange} />
+            </div>
+            <button type="submit" className="btn" onClick={this.onClick}>Login</button>
+          </form>
+        </Container>
   		);
     }
   }
