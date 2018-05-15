@@ -9,9 +9,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         require: true
     },
-    lists: {
-    	type: Array
-    }
+    lists: [{ type: mongoose.Schema.Types.ObjectId, ref: "List" }]
 });
 
 module.exports = mongoose.model("User", userSchema);

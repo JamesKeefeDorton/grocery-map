@@ -2,6 +2,8 @@ const db = require("../models");
 
 module.exports = {
     addUser: function (req, res) {
+        console.log("Here it is!");
+        console.log(req.body);
         db.User
             .create(req.body)
             .then(dbModel => res.json(dbModel))
@@ -13,4 +15,10 @@ module.exports = {
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err))
     },
+    addList: function (req, res) {
+        db.User
+            .findByIdAndUpdate(req.params.userid, { $push: { lists: req.params.listid } })
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err))
+    }
 }

@@ -5,9 +5,7 @@ const listSchema = new mongoose.Schema({
         type: String,
         require: true
     },
-    items: {
-        type: Array
-    }
+    items: [{ type: mongoose.Schema.Types.ObjectId, ref: "Item" }]
 });
 
 module.exports = mongoose.model("List", listSchema);
