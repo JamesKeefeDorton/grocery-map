@@ -102,7 +102,7 @@ class ListChild extends Component {
         console.log("return from item", itemObj);
         this.props.history.push({
             pathname: '/home',
-            state: { "detail": itemObj }
+            state: { detail: itemObj }
         })
         /* this.setState({
             redirect: true

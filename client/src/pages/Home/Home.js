@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 
 class Home extends Component {
+
+
 	componentDidMount() {
-		console.log("ended here from map list ", this.props.location.state.detail);
+		this.setState(this.props.location.state);
+		
+		
 	}
 	render() {
+		console.log("I am at home ", this.state);
 		return (
-			<h3>Home</h3>
+			<h3>home</h3>
 		);
 	}
 }
