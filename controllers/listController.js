@@ -9,9 +9,14 @@ module.exports = {
         .catch(err => res.status(422).json(err))
     },
     createList: (req, res) => {
-      db.List
-        .create(req.body, (err, list) => {axios.put("/api/user/addlist/" + req.params.userid + "/" + list["_id"])})
+      /*const ret = */db.List
+        .create(req.body, (err, list) => {
+          //axios.put()
+          return list;
+        })
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err))
+        //.then(rtn => {console.log(rtn.connection.params);});
+      //return ret;
     }
 }

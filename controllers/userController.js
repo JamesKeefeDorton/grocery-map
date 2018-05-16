@@ -2,8 +2,6 @@ const db = require("../models");
 
 module.exports = {
     addUser: function (req, res) {
-        console.log("Here it is!");
-        console.log(req.body);
         db.User
             .create(req.body)
             .then(dbModel => res.json(dbModel))

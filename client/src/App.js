@@ -6,6 +6,7 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import AddList from "./sandbox/AddList";
 
 class App extends React.Component {
   state = {
@@ -38,7 +39,8 @@ class App extends React.Component {
               <Route exact path="/" component={Home} />
               <Route exact path="/about" component={About} />
               <Route exact path="/signup" component={Register} />
-              <Route exact path="/login" render={ () => <Login callback={this.handleLogin} /> } /> 
+              <Route exact path="/login" render={ () => <Login callback={this.handleLogin} /> } />
+              <Route exact path="/addlist" component={AddList} />
             </Switch>
           </div>
         </Router>
