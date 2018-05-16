@@ -3,7 +3,6 @@ const db = require("../models");
 
 // Defining methods for the booksController
 module.exports = {
-<<<<<<< HEAD
     findList: (req, res) => {
       db.List
         .find({id: req.params.id})
@@ -20,9 +19,7 @@ module.exports = {
         .catch(err => res.status(422).json(err))
         //.then(rtn => {console.log(rtn.connection.params);});
       //return ret;
-    }
-}
-=======
+    },
     findAll: function (req, res) {
         db.List
             .find(req.query)
@@ -58,4 +55,3 @@ module.exports = {
             .catch(err => res.status(422).json(err));
     }
 };
->>>>>>> master
