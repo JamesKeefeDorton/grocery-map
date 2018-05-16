@@ -50,20 +50,51 @@ class ListChild extends Component {
     }
 
     handleFormSubmit = (list) => {
+        let items = [];
+        let itemObj = [];
         if (this.state === null) {
-            var items = list.items.split(',');
-            console.log("map state is null ", items[0])
-            API.getItem(items[0])
-                .then(res => console.log("return from item", res.data))
-                .catch(err => console.log(err));
+            /* items = [];
+            itemObj = []; */
+            items = list.items.split(',');
+            console.log("map state is null ", items)
+            /* items.map(item => {
+                API.getItem(item)
+                    .then(res => {
+                        if (res.data) {
+                            itemObj.push(res.data);
+                            console.log("return from item", itemObj)
+                        }
+                    })
+                    .catch(err => console.log(err));
+            }); */
         }
         else {
-            var items = this.state.items.split(',');
-            console.log("map state is not  null ", items[0])
-            API.getItem(items[0])
-                .then(res => console.log("return from item", res.data))
-                .catch(err => console.log(err));
+            /* items = [];
+            itemObj = []; */
+            items = this.state.items.split(',');
+            console.log("map state is not  null ", items)
+           /*  items.map(item => {
+                API.getItem(item)
+                    .then(res => {
+                        if (res.data) {
+                            itemObj.push(res.data);
+                            console.log("return from item", itemObj)
+                        }
+                    })
+                    .catch(err => console.log(err));
+            }); */
         }
+        items.map(item => {
+            API.getItem(item)
+                .then(res => {
+                    if (res.data) {
+                        itemObj.push(res.data);
+                    }
+                })
+                .catch(err => console.log(err));
+        });
+        console.log("return from item", itemObj);
+        
     }
 
     render() {
