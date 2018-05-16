@@ -14,8 +14,8 @@ const App = () => (
     <div>
       <Navbar />
       <Switch>
-      {/*   <Route exact path="/" component={Home} /> */}
-        <Route exact path="/" component={Home} />
+        <Route exact path="/home" component={Home} />
+        <Route exact path="/" component={Lists} />
         <Route exact path="/list" component={Lists} />
         <Route exact path="/list/:id" component={Lists} />
         <Route exact path="/about" component={About} />

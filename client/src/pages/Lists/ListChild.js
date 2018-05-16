@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { withRouter } from 'react-router';
+import { Redirect } from 'react-router-dom'
 import { Collapse, Button, CardBody, Card } from 'reactstrap';
 import DeleteBtn from "../../components/DeleteBtn";
 import UpdateBtn from "../../components/UpdateBtn";
@@ -10,6 +12,10 @@ import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 
 class ListChild extends Component {
+
+   /*  state = {
+        redirect: false
+    } */
 
     constructor(props) {
         super(props);
@@ -94,9 +100,21 @@ class ListChild extends Component {
                 .catch(err => console.log(err));
         });
         console.log("return from item", itemObj);
-        
+        this.props.history.push({
+            pathname: '/home',
+            state: { detail: itemObj }
+        })
+        /* this.setState({
+            redirect: true
+        }) */
     }
 
+/*     renderRedirect = () => {
+        if (this.state.redirect) {
+            return <Redirect to='/login' />
+        }
+    } */
+            
     render() {
         const { selectedList } = this.props;
         return (
@@ -111,6 +129,7 @@ class ListChild extends Component {
                                     {selectedList.items}
                                 </textarea>
                                 <UpdateBtn onClick={() => this.updateList(selectedList)} />
+                                {/* {this.renderRedirect()} */}
                                 <FormBtn onClick= {() => this.handleFormSubmit(selectedList)}> Map List </FormBtn>
                             </CardBody>
                         </Card>
@@ -121,4 +140,4 @@ class ListChild extends Component {
     }
 }
 
-export default ListChild;
+export default  withRouter(ListChild);
