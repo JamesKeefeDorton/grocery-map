@@ -9,12 +9,9 @@ const itemSchema = new mongoose.Schema({
         type: String,
         require: true
     },
-    coordinates: {
-        type: String,
-        require: true
-    },
+    coordinates: [Number],
     price: Number,
-    itemlist: [String]
+    
 
 });
 
