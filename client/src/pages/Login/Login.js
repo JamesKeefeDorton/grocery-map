@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import { Redirect } from "react-router-dom";
 import axios from "axios";
+<<<<<<< HEAD
 import { Container } from "reactstrap";
+=======
+//import {} from 'reactstrap';
+import ListItems from "../../pages/Lists";
+>>>>>>> master
 
 class Login extends Component {
 
