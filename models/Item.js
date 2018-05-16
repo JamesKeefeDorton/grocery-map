@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const itemSchema = new mongoose.Schema({
-    name: {
+    _id: {
         type: String,
         require: true
     },
@@ -13,7 +13,9 @@ const itemSchema = new mongoose.Schema({
         type: String,
         require: true
     },
-    price: Number 
+    price: Number,
+    itemlist: [String]
+
 });
 
 module.exports = mongoose.model("Item", itemSchema);

@@ -6,7 +6,8 @@ const listSchema = new mongoose.Schema({
         require: true
     },
     items: {
-        type: Array
+        type: String,
+        require: true
     }
 });
 

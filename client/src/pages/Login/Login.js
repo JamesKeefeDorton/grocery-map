@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 //import { Link } from "react-router-dom";
 import axios from "axios";
 //import {} from 'reactstrap';
-import ListItems from "../../pages/ListItems";
+import ListItems from "../../pages/Lists";
 
 class Login extends Component {
 

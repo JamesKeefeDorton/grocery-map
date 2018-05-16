@@ -11,34 +11,40 @@ mongoose.connect(
 
 const inventorySeed = [
     {
-        name: "Toothpaste",
+        _id: "Toothpaste",
         location: "1",
         coordinates: "1,2",
-        price: 2.5
+        price: 2.5,
+        itemlist: ['a','b']
     },
     {
-        name: "Oatmeal",
+        _id: "Oatmeal",
         location: "2",
         coordinates: "2,3",
-        price: 3.5
+        price: 3.5,
+        itemlist: ['a', 'b']
     },
     {
-        name: "Shampoo",
+        _id: "Shampoo",
         location: "3",
         coordinates: "3,4",
-        price: 4.5
+        price: 4.5,
+        itemlist: ['a', 'b']
+
     },
     {
-        name: "Rice",
+        _id: "Rice",
         location: "4",
         coordinates: "4,5",
-        price: 5.5
+        price: 5.5,
+        itemlist: ['a', 'b']
     },
     {
-        name: "Light Bulbs",
+        _id: "Light Bulbs",
         location: "5",
         coordinates: "5,6",
-        price: 6.5
+        price: 6.5,
+        itemlist: ['a', 'b']
     }
 ];
 
