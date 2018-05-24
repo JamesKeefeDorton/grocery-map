@@ -129,9 +129,11 @@ class ListChild extends Component {
                                     {selectedList.items}
                                 </textarea>*/}
 
-                                <List>
-                                    {selectedList.items}
-                                </List>
+                                <ul>
+                                    {selectedList.items.map(item => (
+                                        <li>item</li>
+                                    ))}
+                                </ul>
 
                                 {/*<UpdateBtn onClick={() => this.updateList(selectedList)} />*/}
                                 {/* {this.renderRedirect()} */}
