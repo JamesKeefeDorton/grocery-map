@@ -130,11 +130,7 @@ class ListChild extends Component {
                                 </textarea>*/}
 
                                 <List>
-                                    {selectedList.items.map((items, index) => (
-                                        <ListItem>
-                                            {selectedList[index]}
-                                        </ListItem>
-                                    ))}
+                                    {selectedList.items}
                                 </List>
 
                                 {/*<UpdateBtn onClick={() => this.updateList(selectedList)} />*/}
