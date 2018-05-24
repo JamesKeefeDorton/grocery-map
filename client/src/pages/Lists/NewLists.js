@@ -72,9 +72,9 @@ class Lists extends Component {
         return (
             <Container fluid>
                 <Row>
-                    {/*<Col size="md-6">
+                    <Col size="md-6">
                         <Jumbotron>
-                            <h1>Want To Add A New List</h1>
+                            <h1>Create New List</h1>
                         </Jumbotron>
                         <form>
                             <Input
@@ -96,10 +96,10 @@ class Lists extends Component {
                                 Submit List
               </FormBtn>
                         </form>
-                    </Col>*/}
-                    <Col size="md-12 sm-12">
+                    </Col>
+                    <Col size="md-6 sm-12">
                         <Jumbotron>
-                            <h1>Your Lists</h1>
+                            <h1>My Lists</h1>
                         </Jumbotron>
                         {this.state.list.length ? (
                             <List>
