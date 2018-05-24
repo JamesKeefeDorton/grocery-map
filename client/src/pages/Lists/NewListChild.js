@@ -125,12 +125,21 @@ class ListChild extends Component {
                     <Collapse isOpen={this.props.isOpen}>
                         <Card>
                             <CardBody>
-                                <textarea name="items" onChange={this.handleChange}>
+                                {/*<textarea name="items" onChange={this.handleChange}>
                                     {selectedList.items}
-                                </textarea>
-                                <UpdateBtn onClick={() => this.updateList(selectedList)} />
+                                </textarea>*/}
+
+                                <List>
+                                    {selectedList.items.map((items, index) => (
+                                        <ListItem>
+                                            {selectedList[index]}
+                                        </ListItem>
+                                    ))}
+                                </List>
+
+                                {/*<UpdateBtn onClick={() => this.updateList(selectedList)} />*/}
                                 {/* {this.renderRedirect()} */}
-                                <FormBtn onClick= {() => this.handleFormSubmit(selectedList)}> Map List </FormBtn>
+                                {/*<FormBtn onClick= {() => this.handleFormSubmit(selectedList)}> Map List </FormBtn>*/}
                             </CardBody>
                         </Card>
                     </Collapse>

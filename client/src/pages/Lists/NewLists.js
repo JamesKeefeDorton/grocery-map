@@ -99,7 +99,7 @@ class Lists extends Component {
                     </Col>*/}
                     <Col size="md-12 sm-12">
                         <Jumbotron>
-                            <h1>Items On My List</h1>
+                            <h1>Your Lists</h1>
                         </Jumbotron>
                         {this.state.list.length ? (
                             <List>
