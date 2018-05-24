@@ -131,6 +131,11 @@ class ListChild extends Component {
 
                                 <List>
                                     {selectedList.items}
+                                    {for (let i = 0; i < selectedList.items.length; i++) {
+                                        return (
+                                            <ListItem>selectedList.items[i]</ListItem>
+                                        );
+                                    }}
                                 </List>
 
                                 {/*<UpdateBtn onClick={() => this.updateList(selectedList)} />*/}
