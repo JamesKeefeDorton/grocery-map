@@ -97,7 +97,7 @@ class Lists extends Component {
               </FormBtn>
                         </form>
                     </Col>*/}
-                    <Col size="md-6 sm-12">
+                    <Col size="md-12 sm-12">
                         <Jumbotron>
                             <h1>Items On My List</h1>
                         </Jumbotron>
